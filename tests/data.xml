@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<dataset>
+    <table name="cb_files">
+        <column>id</column>
+        <column>name</column>
+        <column>description</column>
+        <column>uri</column>
+        <column>extension</column>
+        <column>size</column>
+        <column>views</column>
+        <column>mimetype</column>
+        <column>date_hour</column>
+        <column>metadata</column>
+        <column>status</column>
+        <row>
+            <value>1</value>
+            <value>RREO - 2º Bimestre de 2018</value>
+            <value>Descrição 1</value>
+            <value>rreo-2-bimestre-2018.pdf</value>
+            <value>pdf</value>
+            <value>10</value>
+            <value>0</value>
+            <value>application/pdf</value>
+            <value>2018-05-26</value>
+            <value>{}</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>RGF - 2º Semestre de 2018</value>
+            <value>Descrição 2</value>
+            <value>rgf-2018-2-semestre.pdf</value>
+            <value>pdf</value>
+            <value>20</value>
+            <value>1205</value>
+            <value>application/pdf</value>
+            <value>2017-10-15</value>
+            <value>{}</value>
+            <value>2</value>
+        </row>
+        <row>
+            <value>3</value>
+            <value>Decreto 987/2018</value>
+            <value>Descrição 3</value>
+            <value>decreto-2018-987.pdf</value>
+            <value>pdf</value>
+            <value>30</value>
+            <value>100000</value>
+            <value>application/pdf</value>
+            <value>2017-08-11</value>
+            <value>{}</value>
+            <value>3</value>
+        </row>
+        <row>
+            <value>4</value>
+            <value>Projeto de Lei 001/2018</value>
+            <value>Descrição 4</value>
+            <value>projeto-de-lei-2018-001.pdf</value>
+            <value>pdf</value>
+            <value>40</value>
+            <value>5058</value>
+            <value>application/pdf</value>
+            <value>2017-01-19</value>
+            <value>{}</value>
+            <value>4</value>
+        </row>
+    </table>
+
+    <table name="cb_labels">
+        <column>id</column>
+        <column>name</column>
+        <column>parent</column>
+        <column>uri</column>
+        <column>status</column>
+        <row>
+            <value>1</value>
+            <value>RREO</value>
+            <value>0</value>
+            <value>rreo</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>RGF</value>
+            <value>0</value>
+            <value>rgf</value>
+            <value>2</value>
+        </row>
+        <row>
+            <value>3</value>
+            <value>Decreto</value>
+            <value>0</value>
+            <value>decreto</value>
+            <value>3</value>
+        </row>
+        <row>
+            <value>4</value>
+            <value>Projeto de Lei</value>
+            <value>0</value>
+            <value>projeto</value>
+            <value>4</value>
+        </row>
+    </table>
+
+    <table name="cb_documents">
+        <column>id</column>
+        <column>file_id</column>
+        <column>label_id</column>
+        <column>status</column>
+        <row>
+            <value>1</value>
+            <value>1</value>
+            <value>1</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>2</value>
+            <value>2</value>
+            <value>2</value>
+        </row>
+        <row>
+            <value>3</value>
+            <value>3</value>
+            <value>3</value>
+            <value>3</value>
+        </row>
+        <row>
+            <value>4</value>
+            <value>4</value>
+            <value>4</value>
+            <value>4</value>
+        </row>
+    </table>
+</dataset>
