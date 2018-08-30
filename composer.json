@@ -1,0 +1,45 @@
+{
+    "name": "ciebit/documents",
+    "description": "Módulo de gerenciamento de documentos",
+    "keywords": ["documents", "documentos"],
+    "type": "library",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/ciebit/documents/issues",
+        "source": "https://github.com/ciebit/documents"
+    },
+    "authors": [
+        {
+            "name": "Johnny Saymon",
+            "email": "saymon@ciebit.com",
+            "homepage": "http://saymon.ciebit.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Maike Negreiros",
+            "email": "maike_jbe@hotmail.com",
+            "homepage": "http://maikenegreiros.me",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Ciebit\\Documents\\": "source/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4":{
+            "Ciebit\\Documents\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "aws/aws-sdk-php": "^3.52",
+        "myclabs/php-enum": "^1.6.2",
+        "ciebit/files": "v0.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4",
+        "phpunit/dbunit": "^3.0"
+    }
+}
