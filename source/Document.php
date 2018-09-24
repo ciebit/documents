@@ -1,8 +1,12 @@
 <?php
 namespace Ciebit\Documents;
 
+use Ciebit\Labels\Label;
+use Ciebit\Files\File;
+
 class Document
 {
+    private $id; #int
     private $file; #File
     private $label; #Label
     private $status; #Status
@@ -13,9 +17,15 @@ class Document
         Status $status
     )
     {
+        $this->id = 0;
         $this->file = $file;
         $this->label = $label;
         $this->status = $status;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     public function getFile(): File
@@ -26,5 +36,16 @@ class Document
     public function getLabel(): Label
     {
         return $this->label;
+    }
+
+    public function getStatus(): Status
+    {
+        return $this->status;
+    }
+
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+        return $this;
     }
 }
