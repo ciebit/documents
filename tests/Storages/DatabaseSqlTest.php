@@ -26,7 +26,7 @@ class DatabaseSqlTest extends Connection
         $database = $this->getDatabase();
         $documentsCollection = $database->getAll();
         $this->assertInstanceOf(Collection::class, $documentsCollection);
-        $this->assertCount(5, $documentsCollection->getIterator());
+        $this->assertCount(4, $documentsCollection->getIterator());
     }
 
     public function testGetAllFilterById(): void
@@ -46,29 +46,6 @@ class DatabaseSqlTest extends Connection
         $documentsCollection = $database->getAll();
         $this->assertCount(1, $documentsCollection->getIterator());
         $this->assertEquals(Status::ACTIVE(), $documentsCollection->getArrayObject()->offsetGet(0)->getStatus());
-    }
-
-    public function testGetFilterByBody(): void
-    {
-        $database = $this->getDatabase();
-        $database->addFilterByBody('Text New 3');
-        $document = $database->get();
-        $this->assertEquals(3, $document->getId());
-
-        $database = $this->getDatabase();
-        $database->addFilterByBody('%New 2', 'LIKE');
-        $document = $database->get();
-        $this->assertEquals(2, $document->getId());
-
-        $database = $this->getDatabase();
-        $database->addFilterByBody('New five%', 'LIKE');
-        $document = $database->get();
-        $this->assertEquals(5, $document->getId());
-
-        $database = $this->getDatabase();
-        $database->addFilterByBody('%five%', 'LIKE');
-        $document = $database->get();
-        $this->assertEquals(5, $document->getId());
     }
 
     public function testGetFilterById(): void
@@ -91,31 +68,21 @@ class DatabaseSqlTest extends Connection
     public function testGetFilterByTitle(): void
     {
         $database = $this->getDatabase();
-        $database->addFilterByTitle('Title New 3');
+        $database->addFilterByTitle('Decreto 987/2018');
         $document = $database->get();
         $this->assertEquals(3, $document->getId());
 
         $database = $this->getDatabase();
-        $database->addFilterByTitle('%New 2', 'LIKE');
+        $database->addFilterByTitle('%Bimestre de 2018', 'LIKE');
         $document = $database->get();
-        $this->assertEquals(2, $document->getId());
-
-        $database = $this->getDatabase();
-        $database->addFilterByTitle('New five%', 'LIKE');
-        $document = $database->get();
-        $this->assertEquals(5, $document->getId());
-
-        $database = $this->getDatabase();
-        $database->addFilterByTitle('%five%', 'LIKE');
-        $document = $database->get();
-        $this->assertEquals(5, $document->getId());
+        $this->assertEquals(1, $document->getId());
     }
 
     public function testGetFilterByUri(): void
     {
         $database = $this->getDatabase();
-        $database->addFilterByUri('title-new-3');
+        $database->addFilterByUri('rgf-2018-2-semestre.pdf');
         $document = $database->get();
-        $this->assertEquals(3, $document->getId());
+        $this->assertEquals(2, $document->getId());
     }
 }
