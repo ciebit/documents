@@ -68,8 +68,8 @@
 
     <table name="cb_labels">
         <column>id</column>
-        <column>name</column>
-        <column>parent</column>
+        <column>title</column>
+        <column>ascendants_id</column>
         <column>uri</column>
         <column>status</column>
         <row>
