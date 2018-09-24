@@ -42,7 +42,7 @@ class Sql extends SqlFilters implements Database
     public function addFilterByTitle(string $title, string $operator = '='): Storage
     {
         $key = 'title';
-        $sql = "`documents`.`file_title` {$operator} :{$key}";
+        $sql = "`documents`.`file_name` {$operator} :{$key}";
         $this->addFilter($key, $sql, PDO::PARAM_STR, $title);
         return $this;
     }
@@ -72,7 +72,7 @@ class Sql extends SqlFilters implements Database
         if ($documentData == false) {
             return null;
         }
-
+        
         $standarsizedData = $this->standardizeData($documentData);
         return (new Builder)->setData($standarsizedData)->build();
     }
@@ -93,10 +93,10 @@ class Sql extends SqlFilters implements Database
                 'metadata' => $data['file_metadata'],
                 'status' => $data['file_status']
             ],
-            'label_id' => [
+            'label' => [
                 'id' => $data['label_id'],
-                'name' => $data['label_name'],
-                'parent' => $data['label_parent'],
+                'title' => $data['label_title'],
+                'ascendants_id' => $data['label_ascendants_id'],
                 'uri' => $data['label_uri'],
                 'status' => $data['label_status']
             ],
@@ -145,8 +145,8 @@ class Sql extends SqlFilters implements Database
             `documents`.`file_metadata`,
             `documents`.`file_status`,
             `documents`.`label_id`,
-            `documents`.`label_name`,
-            `documents`.`label_parent`,
+            `documents`.`label_title`,
+            `documents`.`label_ascendants_id`,
             `documents`.`label_uri`,
             `documents`.`label_status`
         ';
